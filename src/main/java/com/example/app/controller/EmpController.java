@@ -11,22 +11,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 
 public class EmpController {
-	
+	List<Integer> list;
 	
 	@GetMapping("/getEmpData")
 	public List<Integer> getEmpData() {
-		List<Integer> list=new ArrayList<>();
+		list=new ArrayList<>();
 		for(int i=10;i<=100;i+=10) {
 			list.add(i);
 		}
 		return list;
 
 	}
-	@PostMapping("/")
-	private String insertEmpData() {
+	@GetMapping("/getData")
+	private List<Integer> insertEmpData() {
 		// TODO Auto-generated method stub
-		return "Data Inserted";
+		return list;
 
+	}
+	@PostMapping("/insertData")
+	private String insertData() {
+		// TODO Auto-generated method stub
+		return "Data inserted";
 	}
 
 }
