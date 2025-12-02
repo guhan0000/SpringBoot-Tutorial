@@ -28,5 +28,10 @@ public class EmpRepository {
 		return "EmpData Inserted";
 
 	}
+	public void updateEmpRepo() {
+		// TODO Auto-generated method stub
+		map.replace("empDept", "Product");
+
+	}
 
 }
