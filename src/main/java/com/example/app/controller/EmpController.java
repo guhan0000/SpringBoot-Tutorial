@@ -26,13 +26,10 @@ public class EmpController {
 	}
 	
 	
-	
-
-	
-	//	@PostMapping("/insertData")
-//	private String insertData() {
-//		// TODO Auto-generated method stub
-//		return "Data inserted";
-//	}
+@PostMapping("/insertEmpData")
+	private String insertData() {
+		// TODO Auto-generated method stub
+		return service.insertEmpService();
+	}
 
 }

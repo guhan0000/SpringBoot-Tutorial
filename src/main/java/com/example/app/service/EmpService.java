@@ -17,5 +17,11 @@ public class EmpService {
 		return repository.getEmpRepo();
 
 	}
+	public String insertEmpService() {
+		// TODO Auto-generated method stub
+	return	repository.insertEmpRepo();
+		
+
+	}
 
 }

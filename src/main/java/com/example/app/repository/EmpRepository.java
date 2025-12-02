@@ -22,5 +22,11 @@ public class EmpRepository {
 		return map;
 
 	}
+	public String insertEmpRepo() {
+		// TODO Auto-generated method stub
+		map.put("empSalary", 36025);
+		return "EmpData Inserted";
+
+	}
 
 }
