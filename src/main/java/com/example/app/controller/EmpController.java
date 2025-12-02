@@ -2,36 +2,37 @@ package com.example.app.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.app.service.EmpService;
+
 @RestController
 
 public class EmpController {
-	List<Integer> list;
-	
+	@Autowired
+	EmpService service;
 	@GetMapping("/getEmpData")
-	public List<Integer> getEmpData() {
-		list=new ArrayList<>();
-		for(int i=10;i<=100;i+=10) {
-			list.add(i);
-		}
-		return list;
+	private Map<String, Object> getEmpData() {
+		// TODO Auto-generated method stub
+		return service.getEmpService();
+		
 
 	}
-	@GetMapping("/getData")
-	private List<Integer> insertEmpData() {
-		// TODO Auto-generated method stub
-		return list;
+	
+	
+	
 
-	}
-	@PostMapping("/insertData")
-	private String insertData() {
-		// TODO Auto-generated method stub
-		return "Data inserted";
-	}
+	
+	//	@PostMapping("/insertData")
+//	private String insertData() {
+//		// TODO Auto-generated method stub
+//		return "Data inserted";
+//	}
 
 }
