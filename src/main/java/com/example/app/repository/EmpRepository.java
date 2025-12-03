@@ -41,11 +41,15 @@ public class EmpRepository {
 //		return "EmpData Inserted";
 //
 //	}
-//	public void updateEmpRepo() {
-//		// TODO Auto-generated method stub
-//		map.replace("empDept", "Product");
-//
-//	}
+	public void updateEmpRepo() {
+		// TODO Auto-generated method stub
+		Employee employee = list.get(1);
+		employee.setEmpCity("Bengaluru");
+		
+		
+		
+
+	}
 //	public String deleteEmpRepo() {
 //		map.remove("empPhone");	
 //		return "EmpPhoneDeleted";

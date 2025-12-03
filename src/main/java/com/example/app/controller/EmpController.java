@@ -33,12 +33,12 @@ public class EmpController {
 //		// TODO Auto-generated method stub
 //		return service.insertEmpService();
 //	}
-//@PutMapping("/updateEmpData")
-//	private void updateEmpData() {
-//		// TODO Auto-generated method stub
-//		service.updateEmpService();
-//
-//	}
+@PutMapping("/updateEmpData")
+	private void updateEmpData() {
+		// TODO Auto-generated method stub
+		service.updateEmpService();
+
+	}
 //@DeleteMapping("/deleteEmpData")
 //	private String deleteEmpData() {
 //		// TODO Auto-generated method stub
