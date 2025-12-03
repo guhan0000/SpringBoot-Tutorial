@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.app.entity.Employee;
 import com.example.app.service.EmpService;
 
 @RestController
@@ -20,30 +21,30 @@ public class EmpController {
 	@Autowired
 	EmpService service;
 	@GetMapping("/getEmpData")
-	private Map<String, Object> getEmpData() {
+	private List<Employee> getEmpData() {
 		// TODO Auto-generated method stub
 		return service.getEmpService();
 		
 
 	}
 	
-@PostMapping("/insertEmpData")
-	private String insertData() {
-		// TODO Auto-generated method stub
-		return service.insertEmpService();
-	}
-@PutMapping("/updateEmpData")
-	private void updateEmpData() {
-		// TODO Auto-generated method stub
-		service.updateEmpService();
-
-	}
-@DeleteMapping("/deleteEmpData")
-	private String deleteEmpData() {
-		// TODO Auto-generated method stub
-		return service.deleteEmpService();
-		
-	
-	}
+//@PostMapping("/insertEmpData")
+//	private String insertData() {
+//		// TODO Auto-generated method stub
+//		return service.insertEmpService();
+//	}
+//@PutMapping("/updateEmpData")
+//	private void updateEmpData() {
+//		// TODO Auto-generated method stub
+//		service.updateEmpService();
+//
+//	}
+//@DeleteMapping("/deleteEmpData")
+//	private String deleteEmpData() {
+//		// TODO Auto-generated method stub
+//		return service.deleteEmpService();
+//		
+//	
+//	}
 
 }
