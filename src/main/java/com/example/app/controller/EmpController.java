@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,12 +40,12 @@ public class EmpController {
 		service.updateEmpService();
 
 	}
-//@DeleteMapping("/deleteEmpData")
-//	private String deleteEmpData() {
-//		// TODO Auto-generated method stub
-//		return service.deleteEmpService();
-//		
-//	
-//	}
+@DeleteMapping("/deleteEmpData/{index}")
+	private String deleteEmpData(@PathVariable int index) {
+		// TODO Auto-generated method stub
+		return service.deleteEmpService(index);
+		
+	
+	}
 
 }

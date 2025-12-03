@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.example.app.entity.Employee;
 @Repository
 public class EmpRepository {
-	
+//	static int index;
 	static List<Employee> list;
 	static {
 		list=new ArrayList<>();
@@ -26,6 +26,7 @@ public class EmpRepository {
 		employee2.setEmpDept("Production");
 		employee2.setEmpCity("Coimbatore");
 		list.add(employee2);
+//		index=0;
 		
 	}
 	
@@ -50,9 +51,15 @@ public class EmpRepository {
 		
 
 	}
-//	public String deleteEmpRepo() {
-//		map.remove("empPhone");	
-//		return "EmpPhoneDeleted";
-//	}
+	public String deleteEmpRepo(int index) {
+		if(list.size()>index && index>=0) {
+			list.remove(index);
+			return "Employee Removed";
+		}
+		return "Employee not Removed";
+	
+		
+			
+	}
 
 }

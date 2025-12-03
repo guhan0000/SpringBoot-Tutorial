@@ -29,10 +29,10 @@ public class EmpService {
 		// TODO Auto-generated method stub
 		repository.updateEmpRepo();
 	}
-//	public String deleteEmpService() {
-//		// TODO Auto-generated method stub
-//		return repository.deleteEmpRepo();
-//
-//	}
+	public String deleteEmpService(int index) {
+		// TODO Auto-generated method stub
+		return repository.deleteEmpRepo(index);
+
+	}
 
 }
