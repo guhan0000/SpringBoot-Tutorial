@@ -27,5 +27,10 @@ public class EmpService {
 		// TODO Auto-generated method stub
 		repository.updateEmpRepo();
 	}
+	public String deleteEmpService() {
+		// TODO Auto-generated method stub
+		return repository.deleteEmpRepo();
+
+	}
 
 }

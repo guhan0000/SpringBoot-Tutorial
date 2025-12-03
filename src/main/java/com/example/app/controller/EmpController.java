@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,6 +37,13 @@ public class EmpController {
 		// TODO Auto-generated method stub
 		service.updateEmpService();
 
+	}
+@DeleteMapping("/deleteEmpData")
+	private String deleteEmpData() {
+		// TODO Auto-generated method stub
+		return service.deleteEmpService();
+		
+	
 	}
 
 }

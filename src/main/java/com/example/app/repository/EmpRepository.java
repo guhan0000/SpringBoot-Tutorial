@@ -14,6 +14,7 @@ public class EmpRepository {
 		map.put("empName", "Guhan Muthuramalingam");
 		map.put("empDept", "Dev");
 		map.put("empEmail", "guhanm@mts.com");
+		map.put("empPhone", "+91-9874563120");
 	}
 	
 	
@@ -32,6 +33,10 @@ public class EmpRepository {
 		// TODO Auto-generated method stub
 		map.replace("empDept", "Product");
 
+	}
+	public String deleteEmpRepo() {
+		map.remove("empPhone");	
+		return "EmpPhoneDeleted";
 	}
 
 }
