@@ -13,4 +13,6 @@ public interface StudentServiceInterface {
 
 	String deleteStudent(int id);
 
+	String insertStudent(String name, int age, String email, String dept);
+
 }

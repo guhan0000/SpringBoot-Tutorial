@@ -14,6 +14,7 @@ public class StudentRepository implements StudentRepositoryInterface {
 	final String SELECT="SELECT * FROM students";
 	final String UPDATE="UPDATE students SET email=? WHERE student_id=?";
 	final String DELETE="DELETE FROM students WHERE student_id=?";
+	final String INSERT="INSERT INTO students (name,age,email,department) VALUES (?,?,?,?)";
 	
 	
 //	READ
@@ -46,6 +47,20 @@ public class StudentRepository implements StudentRepositoryInterface {
 		 else {
 			 return "Student not Deleted";
 		 }
+
+	}
+	@Override
+	public String insertStudent(String name,int age,String email,String dept) {
+		// TODO Auto-generated method stubjd
+		Object arr[]= {name,age,email,dept};
+		int update2 = jdbcTemplate.update(INSERT,arr);
+		if (update2==1) {
+			return "Student "+name+" Inserted";
+		}
+		else {
+			return "Student not Inserted";
+		}
+		
 
 	}
 	

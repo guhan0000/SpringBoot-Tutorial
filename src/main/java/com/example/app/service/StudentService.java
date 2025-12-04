@@ -33,5 +33,11 @@ public class StudentService implements StudentServiceInterface {
 		return repository.deleteStudent(id);
 
 	}
+	@Override
+	public String insertStudent(String name,int age,String email,String dept) {
+		// TODO Auto-generated method stub
+		return repository.insertStudent(name, age, email, dept);
+
+	}
 
 }

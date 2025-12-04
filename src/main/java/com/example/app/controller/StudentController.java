@@ -39,6 +39,10 @@ public class StudentController {
 		return service.deleteStudent(2);
 
 	}
+	@PostMapping("/insert")
+	public String insertStudent() {
+		return service.insertStudent("Arthur Morgan", 20, "arthurm@gmail.com", "Mechanical");
+	}
 	
 
 }
