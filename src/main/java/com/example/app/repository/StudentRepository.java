@@ -13,6 +13,7 @@ public class StudentRepository implements StudentRepositoryInterface {
 	private JdbcTemplate jdbcTemplate;
 	final String SELECT="SELECT * FROM students";
 	final String UPDATE="UPDATE students SET email=? WHERE student_id=?";
+	final String DELETE="DELETE FROM students WHERE student_id=?";
 	
 	
 //	READ
@@ -33,6 +34,18 @@ public class StudentRepository implements StudentRepositoryInterface {
 		else {
 			return "email not updated";
 		}
+
+	}
+	@Override
+	public String deleteStudent(int id) {
+		// TODO Auto-generated method stub
+		 int update2 = jdbcTemplate.update(DELETE,id);
+		 if(update2==1) {
+			 return "Student Deleted";
+		 }
+		 else {
+			 return "Student not Deleted";
+		 }
 
 	}
 	

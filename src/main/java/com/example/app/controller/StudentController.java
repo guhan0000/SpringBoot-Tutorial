@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.jspecify.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -32,7 +33,12 @@ public class StudentController {
 		return service.updateStudentEmail(id,email);
 
 	}
-	
+	@DeleteMapping("/deleteStudent")
+	public String deleteStudent() {
+		// TODO Auto-generated method stub
+		return service.deleteStudent(2);
+
+	}
 	
 
 }

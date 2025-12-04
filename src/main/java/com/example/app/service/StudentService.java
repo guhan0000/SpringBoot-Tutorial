@@ -27,5 +27,11 @@ public class StudentService implements StudentServiceInterface {
 		return repository.updateStudentEmail( id, email);
 
 	}
+	@Override
+	public String deleteStudent(int id) {
+		// TODO Auto-generated method stub
+		return repository.deleteStudent(id);
+
+	}
 
 }

@@ -11,4 +11,6 @@ public interface StudentServiceInterface {
 
 	String updateStudentEmail(int id, String email);
 
+	String deleteStudent(int id);
+
 }
