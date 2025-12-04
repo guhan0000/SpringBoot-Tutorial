@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.app.service.StudentService;
+import com.example.app.service.StudentServiceInterface;
 
 @RestController
 public class StudentController {
 	@Autowired
-	StudentService service;
+	StudentServiceInterface service;
 	
 	@GetMapping("/getAllStudents")
 	public List<Map<String, @Nullable Object>> getAllStudents() {

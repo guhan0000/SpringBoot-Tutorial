@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 import com.example.app.repository.StudentRepository;
 
 @Service
-public class StudentService {
+public class StudentService implements StudentServiceInterface {
 	@Autowired
-	StudentRepository repository;
+	StudentServiceInterface repository;
+	
+	@Override
 	public List<Map<String, @Nullable Object>> getAllStudents() {
 		// TODO Auto-generated method stub
 		return repository.getAllStudents();
