@@ -8,16 +8,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.app.repository.StudentRepository;
+import com.example.app.repository.StudentRepositoryInterface;
 
 @Service
 public class StudentService implements StudentServiceInterface {
 	@Autowired
-	StudentServiceInterface repository;
+	StudentRepositoryInterface repository;
 	
 	@Override
 	public List<Map<String, @Nullable Object>> getAllStudents() {
 		// TODO Auto-generated method stub
 		return repository.getAllStudents();
+	}
+	@Override
+	public String updateStudentEmail(int id, String email) {
+		// TODO Auto-generated method stub
+		
+		return repository.updateStudentEmail( id, email);
+
 	}
 
 }
