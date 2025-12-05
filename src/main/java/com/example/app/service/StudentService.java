@@ -7,6 +7,7 @@ import org.jspecify.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.app.entity.Student;
 import com.example.app.repository.StudentRepository;
 import com.example.app.repository.StudentRepositoryInterface;
 
@@ -16,9 +17,15 @@ public class StudentService implements StudentServiceInterface {
 	StudentRepositoryInterface repository;
 	
 	@Override
-	public List<Map<String, @Nullable Object>> getAllStudents() {
+	public List<Student> getAllStudents() {
 		// TODO Auto-generated method stub
 		return repository.getAllStudents();
+	}
+	@Override
+	public Student getStudent(int id) {
+		// TODO Auto-generated method stub
+		return repository.getStudent(id);
+
 	}
 	@Override
 	public String updateStudentEmail(int id, String email) {

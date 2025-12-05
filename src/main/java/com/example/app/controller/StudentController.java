@@ -7,10 +7,12 @@ import org.jspecify.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.app.entity.Student;
 import com.example.app.service.StudentService;
 import com.example.app.service.StudentServiceInterface;
 
@@ -22,10 +24,15 @@ public class StudentController {
 	StudentServiceInterface service;
 	
 	@GetMapping("/getAllStudents")
-	public List<Map<String, @Nullable Object>> getAllStudents() {
+	public List<Student> getAllStudents() {
 		// TODO Auto-generated method stub
 		return service.getAllStudents();
 		}
+	@GetMapping("/getStudent/{id}")
+	public Student getStudent(@PathVariable int id)
+	{
+		return service.getStudent(id);
+	}
 	@PutMapping("/updateStudentEmail")
 	public String updateStudentEmail() {
 		// TODO Auto-generated method stub

@@ -7,10 +7,13 @@ import org.jspecify.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import com.example.app.entity.Student;
 @Repository
 public class StudentRepository implements StudentRepositoryInterface {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	
 	final String SELECT="SELECT * FROM students";
 	final String UPDATE="UPDATE students SET email=? WHERE student_id=?";
 	final String DELETE="DELETE FROM students WHERE student_id=?";
@@ -19,10 +22,32 @@ public class StudentRepository implements StudentRepositoryInterface {
 	
 //	READ
 	@Override
-	public List<Map<String, @Nullable Object>> getAllStudents() {
-		// TODO Auto-generated method stub
-		return jdbcTemplate.queryForList(SELECT);			
+	public List<Student> getAllStudents() {
+		return jdbcTemplate.query(SELECT,(rs,rowNum)->{
+		Student student=new Student();
+		student.setStudentId(rs.getInt("student_id"));
+		student.setStudentName(rs.getString("name"));
+		student.setStudentAge(rs.getInt("age"));
+		student.setStudentDept(rs.getString("department"));
+		return student;
+		});}
+	
+//	READ by ID
+	@Override
+	public Student getStudent(int id) {
+	    String sql = "SELECT * FROM students WHERE student_id = ?";
+
+	    return jdbcTemplate.queryForObject(sql, (rs, rowNum) -> {
+	        Student student = new Student();
+	        student.setStudentId(rs.getInt("student_id"));
+	        student.setStudentName(rs.getString("name"));
+	        student.setStudentAge(rs.getInt("age"));
+	        student.setStuentEmail(rs.getString("email"));
+	        student.setStudentDept(rs.getString("department"));
+	        return student;
+	    }, id);
 	}
+
 //	UPDATE
 	@Override
 	public String updateStudentEmail(int id,String email) {
