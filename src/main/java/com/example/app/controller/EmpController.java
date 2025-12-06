@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -66,6 +67,12 @@ public String name(@RequestParam String name,@RequestParam String role) {
 @GetMapping("/salary")
 public double salary(@RequestParam(name = "empSalary") double salary) {
 	return salary;
+}
+
+@PostMapping("/login")
+public String login(@RequestBody String body) {
+	
+	return body;
 }
 
 }
