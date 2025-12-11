@@ -4,15 +4,18 @@ import java.util.List;
 import java.util.Map;
 
 import org.jspecify.annotations.Nullable;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.example.app.entity.Student;
+import com.example.app.service.StudentService;
 @Repository
 public class StudentRepository implements StudentRepositoryInterface {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	private static final Logger logger=org.slf4j.LoggerFactory.getLogger(StudentRepository.class);
 	
 	final String SELECT="SELECT * FROM students";
 	final String UPDATE="UPDATE students SET email=? WHERE student_id=?";
@@ -67,9 +70,11 @@ public class StudentRepository implements StudentRepositoryInterface {
 		// TODO Auto-generated method stub
 		 int update2 = jdbcTemplate.update(DELETE,id);
 		 if(update2==1) {
+			 logger.warn("Student with id "+id+" is deleted");
 			 return "Student Deleted";
 		 }
 		 else {
+			 logger.error("Student with id "+id+" is deleted");
 			 return "Student not Deleted";
 		 }
 

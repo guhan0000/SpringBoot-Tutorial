@@ -40,10 +40,11 @@ public class StudentController {
 		return service.updateStudentEmail(id,email);
 
 	}
-	@DeleteMapping("/deleteStudent")
-	public String deleteStudent() {
+	@DeleteMapping("/deleteStudent/{id}")
+	public String deleteStudent(@PathVariable int id) {
 		// TODO Auto-generated method stub
-		return service.deleteStudent(2);
+		return service.deleteStudent(id);
+		
 
 	}
 	@PostMapping("/insert")
