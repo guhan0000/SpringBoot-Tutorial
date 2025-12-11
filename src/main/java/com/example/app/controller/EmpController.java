@@ -19,13 +19,25 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.app.entity.Employee;
 import com.example.app.service.EmpService;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
 @RestController
 @RequestMapping("/emp")
 
 public class EmpController {
 	@Autowired
 	EmpService service;
+	
+	@PostConstruct
+	public void loadCache() {
+		System.out.println("Loading Cache....");
 
+	}
+	@PreDestroy
+	public void clearCache() {
+		System.out.println("Clearing Cache....");
+	}
 	@GetMapping("/getEmpData")
 	private List<Employee> getEmpData() {
 		// TODO Auto-generated method stub
